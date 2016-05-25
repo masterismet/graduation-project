@@ -1,0 +1,50 @@
+function grafik() 
+g_title='reel degerler';
+alfa=3.1007;%reel value 
+beta=3.4367    ;%reel value
+fonksiyon1(alfa,beta,g_title)
+% alfa section
+g_title='alfa 1';
+alfa=2.6327;
+beta=3;%reel value
+fonksiyon1(alfa,beta,g_title)
+hold on;
+g_title='alfa 2';
+alfa=2.6986 ; 
+beta=3;%reel value
+fonksiyon1(alfa,beta,g_title)
+hold on;
+g_title='alfa 3';
+alfa=2.8201 ;
+beta=3;%reel value
+fonksiyon1(alfa,beta,g_title)
+
+%beta section
+g_title='beta1';
+alfa=3.1007;%reel value 
+beta=8.4637;
+fonksiyon1(alfa,beta,g_title)
+hold on;
+g_title='beta2';
+alfa=3.1007;%reel value 
+beta=7.4045;
+fonksiyon1(alfa,beta,g_title)
+hold on;
+g_title='beta3';
+alfa=3.1007;%reel value 
+beta=7.3502;
+fonksiyon1(alfa,beta,g_title)
+end
+
+function fonksiyon1(alfa,beta,g_title)
+k=1;
+x=Gen_BurrXII(alfa,beta,1000);%y = 1 + x.^2;
+x=sort(x);
+y = ((k*beta/alfa)*(x/alfa).^(beta-1))/(1+(x/alfa).^beta);
+%y=sin(x*pi/180); %Matlabda trigonometrik i?melemler radian cinsinden yap?l?r
+plot(x,y);
+xlabel('x');
+ylabel('y');
+title(g_title);
+%h(x|a,c)=[(kc/a)(x/a)^(c-1)]/(1+(x/a)^c)
+end

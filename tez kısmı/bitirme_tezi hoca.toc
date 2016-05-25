@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Order Statistics and Record Values}{2}
+\contentsline {section}{\numberline {2}Hazard Function}{3}
+\contentsline {section}{\numberline {3}Burr XII Function}{3}
+\contentsline {section}{\numberline {4}Maximum likelihood estimation}{4}
+\contentsline {section}{\numberline {5}Bayesian estimation}{5}
+\contentsline {paragraph}{Lindley's approximation}{6}
+\contentsline {section}{\numberline {6}Simulation study}{7}
+\contentsline {section}{\numberline {7}Tables}{7}
+\contentsline {section}{\numberline {8}Graphics}{12}
+\contentsline {section}{\numberline {9}References}{20}

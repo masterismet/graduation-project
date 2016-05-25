@@ -1,0 +1,257 @@
+%Burada belgenin "preamble" dediğimiz bölmesi başlıyor.
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{a4paper}
+\usepackage[English]{babel}
+%\usepackage{kpfonts}
+%\usepackage{times}
+%\usepackage{titlesec}
+%\setlength{\baselineskip}{1.5\baselineskip}
+\linespread{1.3}
+\usepackage{indentfirst}
+\makeatletter
+  \renewcommand\@seccntformat[1]{\csname the#1\endcsname.\quad}
+\makeatother
+
+%Kaynakça'nın adını, aşağıdaki satır ile düzenliyoruz.
+\usepackage[nottoc,other]{tocbibind}
+\renewcommand{\tocbibname}{Sources}
+
+%SOBE formatına uygun kaynakça yapısı.
+\makeatletter % @ is now a letter
+\def\bibleftdelim{}
+\def\bibrightdelim{}
+\def\@biblabel#1{\bibleftdelim \bibrightdelim}
+\makeatother % @ is a symbol
+
+%Aşağıda tez önerisi başlığını her defasında yeniden girmememiz için başlığı bir kez aşağıya tanımlıyoruz ve her seferinde aynı komutu giriyoruz.
+%\newcommand{\TEZKONUM}{\textbf{"Estimation of Burr XII distribution based on generalized order statistics"}}
+
+%Aşağıya başlığı gireceğiz.
+\title{\textbf{Estimation of Burr XII distribution based on generalized order statistics}} 
+\author{\textbf{Ismet Artuç}}
+\date{}
+
+%Belgeyi yazmaya başlıyoruz.
+\begin{document}
+
+\maketitle %Bu komutla başlığın oluşturulması emrini veriyoruz.
+
+%\newpage %Bu komutla yeni sayfaya geçiyoruz.
+
+
+
+\tableofcontents %İçindekiler sayfasının bu komutla oluşmasını sağlıyoruz.
+
+\newpage
+\begin{abstract}
+The ordered random variables play important roles in the theory and practice of statistics. They possess significant statistical properties. Over the last few decades, many articles on various topics of ordered statistical data have appeared. It was a special interest to coordinate and edit an interesting research problem based on material contributed by several important researchers from all over the world. In this study the estimation of parameters with different methods using the kth record values from Burr XII distribution will be discussed and based on different estimation hazard function will be obtained. At the beginning we will give brief definition of kth record data, hazard function and Burr XII distribution function.  
+\end{abstract}
+\newpage
+
+\section{\Generalized Order Statistics, Hazard function, Burr XII Distribution}
+\subsection{Generalized Order Statistics}
+Order statistics and record values appear in many statistical applications and are widely used in statistical modeling and inference. A form of the joint distribution of $ \textit{n} $ ordered random variables is presented that enables a unified approach to a variety of models of ordered random variables, e.g. order statistics and record values. Generalized order statistics, provide a suitable approach to explain similarities and analogies in the two models and to generalize related results. The definition of random  $k^{ht}$ record  can  be  shown  as  below.\\
+Let $ X_{1}, X_{2}, . . .$ be a sequence of independent and identically distributed (i.i.d.) random variables with continuous distribution function  $\textit{F (x) = P (X{1} ≤ x)}$. Denote by $\textit{X{1,n} ≤ . . . ≤ X{n}}$,n the order statistics of   $\textit{X{1}, . . . , X{n}}.$ For a fixed integer  $\textit{k} ≥ 1,$ we define the corresponding  $\textit{k^{ht}}$record times, $\textit{{L(n, k), n ≥ 1}}$, and  $\textit{k^{ht} }$ record values $\textit{{X(n, k), n ≥ 1}}$, by setting$L(1, k) = k,	L(n + 1, k) = min{j > L(n, k) : X_{j} > X_{j-k,j-1}}$  	for $n ≥ 1 $, and
+$ X(n, k) = X_{L(n,k)−k+1,L(n,k)} $	for	  $n ≥ 1.$\\
+Let N be a positive integer-valued random variable which is independent of the $ X_{i}. $ The random variables X(N, k) are called the random $\textit{k^{th}} $ record.
+
+\subsection{Hazard Function}
+
+Now we will discuss the hazard function. Hazard function is generally used when calculating the age of an electronic device or any material. The failure rate of a system usually depends on time, with the rate varying over the life cycle of the system. For example, an automobile's failure rate in its fifth year of service may be many times greater than its failure rate during its first year of service.
+
+\begin{equation}
+h(x|a,c)=\frac{\frac{kc}{a}\frac{x}{a}^{c-1}}{1+\frac{x}{a}^{c}}
+\end{equation}
+Many probability distributions can be used to model the failure distribution.
+
+\subsection{Burr XII Distribution}
+\begin{theorem}
+Burr distribution was first introduced by Burr (1942) as a two-parameter family. An additional scale parameter was introduced by Tadikamalla (1980). The Burr distribution can fit a wide range of empirical data. Different values of its parameters cover a broad set of skewness and kurtosis. Hence, it is used in various fields such as finance, hydrology, and reliability to model a variety of data types. Examples of data modeled by the Burr distribution are household income, crop prices, insurance risk, travel time, flood levels, and failure data.
+\end{theorem}
+Hazard functions of Burr type XII distribution is,
+\begin{equation}
+h(x|a,c)=\frac{\frac{kc}{a}\frac{x}{a}^{c-1}}{1+\frac{x}{a}^{c}}
+\end{equation}
+Kamps (1995) introduced the concept of generalized order statistics (gos) as a unified approach to order statistics, record values, and sequential order statistics. The gos are defined using quintile transformation based on the distribution function F.
+Let $\textit{X(1, n, m,k),X(r, n,m,k), k > 1}$, m is a real number, be gos based on absolutely continuous distribution function F with density function f. The joint density function of the above quantities is given by
+\begin{equation}
+f^{X(1,n,m,k),....,X(r,m,n,k}(X_{1},....,X_{r}\\
+=C_{r-1}({\overset{r-1}{\underset{i=1}{{\displaystyle\prod}}}[1-F(x_i)]^{m}f(x_i)})[1-F(x_r)]^{&_r-1}f(x_r),\\
+F^{-1}(0+)<x_1<....<x_r<F'{1},\label{1.3}\\
+where\\
+&_r=k+(n-r)(m+1)>0,\\
+C_{r-1}={\overset{r}{\underset{j=1}{{\displaystyle\prod}}}&_j}  r=1,2,...n , &_n=k. \label{1.4}\\
+
+\end{equation}
+with$  \textit{n ∈ N , k> 0}$  and$\textit{ m ∈ R.}$ For more details of gos, see Kamps (1995). In the case m = 0 and k = 1, X(r, n, m, k) reduces to the ordinary\textit{ r-th} order statistics and (1.3) is the joint pdf of r ordinary order statistics, X_{1:n} ≤ X_{•2:n} ≤ ··· ≤ X_{r:n}. For various distributional properties of ordinary order statistics, see David (1981) and Arnold et al. (1992).
+ If m = −1 and k = 1, then (1.3) is the joint pdf of r upper record values. For some distributional properties of record values, see Ahsanullah (1995) and Arnold et al. (1998).\\
+ Distribution properties of gos from a uniform distribution are given by Ahsanullah (1996). He obtained the minimum variance linear unbiased estimators of the parameters of the two parameters of uniform distribution based on the ﬁrst m gos Kamps (1996) characterized the uniform distribution based on distribution properties of subranges of gos. Kamps and Gather (1997) characterized the exponential distributions by distributional properties of gos Cramer and Kamps (1996, 1998, 2001) studied some estimation problems with different sequential k-out-of-n systems. Ahsanullah (2000) gave some distributional properties of the gos from the two parameter exponential distribution. He also obtained the minimum variance linear unbiased estimators of the two parameters and characterized the exponential distribution based on gos. Cramer and Kamps (2000) derived relations for expectations of functions of gos from a class of distributions which includes the exponential, uniform, Pareto, Lomax and, Pearson I. Habibullah and Ahsanullah (2000) obtained estimates for the parameters of the Pareto distribution based on gos. Kamps and Cramer (2001) studied some distribution properties of the gos from the Pareto, power and Weibull distributions. Jaheen (2002) considered the prediction of future gos from a general class of distributions which includes the Weibull, compound Weibull, Burr type XII, Pareto, beta, and Gompertz by using Bayesian  two-sample  prediction technique.
+
+
+
+\section{Maximum likelihood estimation}
+The log likelihood function $l(\alpha, \beta|\mathbf{x})=\log L(\alpha, \beta|\mathbf{x})$, dropping terms that do not involve $\alpha$ and $\beta$, is 
+\begin{equation*}
+l(\alpha, \beta|\mathbf{X=x})=nln\alpha+nln\beta+(\alpha-1)\sum_{i=1}^{n-1}ln x_{i}-(m\beta+\beta+1)\sum_{i=1}^{n-1}ln(1+x_{i}^{\alpha})
+\end{equation*}
+\begin{equation}
++(\alpha-1)lnx_{n}-(k\beta+1)ln(1+x_{n}^{\alpha}).
+\end{equation}
+We assume that the parameters $\alpha$ and $\beta$ are unknown. To obtain the normal equations for the unknown parameters, we differentiate (22) partially with respect to $\alpha$ and $\beta$ and equate to zero, the resulting equations are 
+\begin{equation}
+0=\frac{\partial l(\alpha, \beta|\mathbf{x})}{\partial \alpha}=\frac{n}{\alpha}+\sum_{i=1}^{n}ln x_{i}-\sum_{i=1}^{n}x_{i}^{\alpha}\upsilon_{i}-\beta\left[(1+m)\sum_{i=1}^{n-1}x_{i}^{\alpha}\upsilon_{i}+k x_{n}^{\alpha}\upsilon_{n}\right],
+\label{alfa_mle}
+\end{equation}
+
+and
+\begin{equation}
+0=\frac{\partial l(\alpha, \beta|\mathbf{x})}{\partial \beta}=\frac{n}{\beta}+(m+1)\sum_{i=1}^{n-1}ln x_{i}^{\alpha}\delta_{i}+k~ln x_{n}^{\alpha}\delta_{n},
+\label{beta_mle}
+\end{equation}
+where
+$\delta_{i}=\frac{x_{i}^{\alpha}}{1+x_{i}^{\alpha}}$ and $\upsilon_{i}=\frac{ln x_{i}}{1+x_{i}^{\alpha}}$.\\The solutions of the above equations are the maximum likelihood estimators of the Burr XII $(\alpha, \beta)$ parameters $\alpha$  and $\beta$, denoted  $\hat{\alpha}_{MLE}$  and $\hat{\beta}_{MLE}$, respectively. As the equations expressed in (23) and (24) cannot be solved analytically, one must use a numerical procedure to solve them.
+
+\section{Bayesian  estimation}
+In this section we consider Bayesian estimation of the unknown parameters of the Burr XII $(\alpha, \beta)$ under squared error loss function $(SEL)$. It is assumed that  $\alpha$  and $\beta$   has the independent gamma prior distributions with probability density functions
+\begin{equation}
+h(\alpha)\propto \alpha^{a-1}e^{-b\alpha},~~\alpha>0
+\end{equation}
+and
+\begin{equation}
+h(\beta)\propto \beta^{c-1}e^{-d\beta},~~\beta>0.
+\end{equation}
+The hyper-parameters $a$, $b$, $c$, and $d$ are known and non-negative. If both the parameters $\alpha$  and $\beta$  are unknown, joint conjugate priors do not exist. It is not unreasonable to assume independent gamma priors on the shape and scale parameters for a two-parameter  Burr XII $(\alpha, \beta)$, because gamma distributions are very flexible, and the Jeffrey's (non-informative) prior, introduced by Jeffrey (1946) is a special case of this. The joint prior distribution in this case is
+\begin{equation}
+h(\alpha, \beta)\propto \alpha^{a-1} e^{-b\alpha} \beta^{c-1} e^{-d\beta},~~\alpha,~\beta>0.
+\end{equation}
+Combining (27) with  (21) and using Bayes theorem, the joint posterior distribution is derived as
+\begin{equation}
+\pi(\alpha, \beta|\mathbf{x})\propto\alpha^{n+a-1} \beta^{n+c-1}e^{-b\alpha-d\beta}\left(\prod_{i=1}^{n-1}\frac{x_{i}^{\alpha-1}}{(1+x_{i}^{\alpha})^{m\beta+\beta+1}}\right)\frac{x_{n}^{\alpha-1}}{(1+x_{n}^{\alpha})^{k\beta+1}}.
+\label{joint_post}
+\end{equation}
+
+ Bayes estimator of any function of $\alpha $ and $\beta $, say $g(\alpha
+,\beta )$ under the SE loss function is its posterior mean. Therefore, the
+Bayes estimator of $g(\alpha ,\beta )$ under the SE loss function is%
+\begin{equation}
+\widehat{g}_{BS}=E_{\left. \alpha ,\beta \right\vert \mathbf{r,k}}(g(\alpha
+,\beta ))=\frac{\int_{0}^{\infty }\int_{0}^{\infty }g(\alpha ,\beta
+)L(\alpha ,\beta ;\mathbf{r,k})\pi (\alpha ,\beta )d\alpha d\beta }{%
+\int_{0}^{\infty }\int_{0}^{\infty }L(\alpha ,\beta ;\mathbf{r,k})\pi
+(\alpha ,\beta )d\alpha d\beta }.  \label{eq17}
+\end{equation}%
+It is not possible to compute Equation (\ref{eq17}) analytically. Two
+approaches are suggested here to approximate Equation (\ref{eq17}), namely
+(i) Lindley's approximation and (ii) MCMC method.
+
+\paragraph{(i) Lindley's approximation}
+
+Lindley (1980) proposed a method to approximate the ratio of integrals such
+as Equation (\ref{eq17}). For the two parameter case $(\alpha ,\beta )$, the Lindley's approximation can be
+written as 
+\begin{equation}
+\widehat{g}_{Lind}(\alpha ,\beta )=g(\widetilde{\alpha },\widetilde{\beta })+%
+\frac{1}{2}\left[ B+Q_{30}B_{12}+Q_{21}C_{12}+Q_{12}C_{21}+Q_{03}B_{21}%
+\right] ,  \label{eq18}
+\end{equation}%
+where $B=\sum_{i=1}^{2}\sum_{j=1}^{2}g_{ij}\tau _{ij}$, $Q_{ij}=\partial
+^{i+j}Q/\partial ^{i}\alpha \partial ^{j}\beta $, for $i,j=0,1,2,3$ and $%
+i+j=3$, $g_{1}=\partial g/\partial \alpha $, $g_{2}=\partial g/\partial
+\beta ,$ $g_{ij}=\partial ^{2}g/\partial \alpha ^{i}\partial \beta ^{j}$ for 
+$i,j=1,2$ and $B_{ij}=(g_{i}\tau _{ii}+g_{j}\tau _{ij})\tau _{ii}$ and $%
+C_{ij}=3g_{i}\tau _{ii}\tau _{ij}+g_{j}(\tau _{ii}\tau _{ij}+2\tau
+_{ij}^{2}) $ for $i\neq j$, where $\tau _{ij}$ is the $(i,j)$th element in
+the inverse of the matrix $Q^{\ast }=(-Q_{ij}^{\ast }),$ $i,j=1,2$ such that 
+$Q_{ij}^{\ast }=\partial ^{2}Q/\partial \alpha ^{i}\partial \beta ^{j}$, $Q$
+is the logarithm of the posterior density function, dropping terms that do not involve $\alpha$ and $\beta$,
+$(\widetilde{\alpha },%
+\widetilde{\beta })$ is the joint posterior mode of $Q$ and $\widehat{g}%
+_{Lind}(\alpha ,\beta )$ is evaluated at $(\widetilde{\alpha },\widetilde{%
+\beta })$.
+
+For our case, we have from Equation (28) %
+\begin{equation}
+\begin{aligned}
+Q=&(n+a-1)\ln \alpha +(n+c-1)\ln \beta -(\alpha-1)\underset{i=1}{\overset{n}{\sum }}\ln x_{i}- \underset{i=1}{\overset{n}{\sum }}\ln (1+x_{i}) \\
+-&\beta \big[ d+(m+1)\underset{i=1}{\overset{n-1}{\sum }}\ln (1+x_{i})^{\alpha} +k \ln(1+x_{n}^{\alpha}) \big]-b \alpha 
+% \label{eq19}
+\end{aligned}
+\end{equation}%
+
+The joint posterior mode is obtained from system equations $\partial Q/\partial
+\alpha =0$ and $\partial Q/\partial \beta =0$. Therefore, 
+\begin{equation}
+\widetilde{\beta }=\frac{n+c-1}{d+\big [(m+1)\underset{i=1}{\overset{n-1}{\sum }}\ln (1+x_{i}^{\widetilde{\alpha }}) +k \ln(1+x_n^{\widetilde{\alpha }}) \big]},
+% \label{eq20}
+\end{equation}%
+and $\widetilde{\alpha }$ is the solution of the following nonlinear equation%
+\begin{equation}
+\frac{n+a-1}{\alpha }-\underset{i=1}{\overset{n}{\sum }}\frac{\ln(x_i)}{1+x_i^\alpha}-\beta \big[ (m+1) \underset{i=1}{\overset{n-1}{\sum }} \frac{x_i^\alpha \ln(x_i)}{1+x_i^\alpha} 
++\frac{k x_n^\alpha \ln(x_n)}{1+x_n^\alpha} \big] -b = 0
+% \label{eq21}
+\end{equation}%
+It can be solved by using the same procedure in Equations (\ref{alfa_mle}) and (%
+\ref{beta_mle}). The elements of the $Q^{\ast }$ are given by 
+\begin{equation}
+Q_{11}^{\ast }=-\frac{(n+a-1)}{\alpha ^{2}}-\underset{i=1}{\overset{n}{%
+\sum }} x_i^\alpha \big(  \frac{\ln (x_i)}{1+x_i^\alpha }\big)^2-\beta (m+1)\underset{i=1}{\overset{n-1}{\sum }} x_i^\alpha \big( \frac{\ln (x_i)}{1+x_i^\alpha}\big )^2-
+\beta k x_n^\alpha \big( \frac{\ln (x_n)}{1+x_n^\alpha} \big)^2
+\label{Q11}
+\end{equation}%
+
+\begin{equation}
+Q_{12}^{\ast }=Q_{21}^ {\ast}=- (m+1)\underset{i=1}{\overset{n-1}{\sum }} x_i^\alpha \frac{\ln (x_i)}{1+x_i^\alpha}- k x_n^\alpha \frac{\ln (x_n)}{1+x_n^\alpha}
+\label{Q21}
+\end{equation}%
+
+
+\begin{equation}
+Q_{22}^{\ast }=-\frac{(n+c-1)}{\beta ^{2}}
+\label{Q22}
+\end{equation}%
+
+
+
+and $\tau _{ij},$ $i,j=1,2$ are obtained by using Equation (\ref{Q11})-(\ref{Q22}).
+Moreover, we have%
+\begin{equation*}
+Q_{12}=0,\text{ }Q_{21}=- (m+1)\underset{i=1}{\overset{n-1}{\sum }} x_i^\alpha (\frac{\ln (x_i)}{1+x_i^\alpha})^2- k x_n^\alpha (\frac{\ln (x_n)}{1+x_n^\alpha})^2, 
+\text{ }Q_{03}=\frac{2\left( n+c-1)\right) }{\beta^3 },
+\end{equation*}%
+
+\begin{equation*}
+\begin{aligned}
+Q_{30}=&\frac{2\left( n+a-1\right) }{\alpha ^{3}}-\underset{i=1}{%
+\overset{n}{\sum }} x_i^\alpha (1-x_i^\alpha )\left( \frac{\ln x_{i}}{1+x_{i}^{\alpha }}\right) ^{3}-
+\beta(m+1)\underset{i=1}{\overset{n-1}{\sum }} x_i^\alpha(1-x_i^\alpha )\left( \frac{\ln x_{i}}{1+x_{i}^{\alpha }}\right) ^{3} \\
+-&\beta k X_n^\alpha(1-x_n^\alpha)\left( \frac{\ln x_{n}}{1+x_{n}^{\alpha }}\right) ^{3}
+\end{equation*}%
+
+Therefore, the approximate Bayes estimators of $\alpha $ and $\beta $ under
+the SE  loss function is obtained as 
+\begin{eqnarray}
+\widehat{\alpha }_{Lind} &=&\widetilde{\alpha }+\frac{1}{2}\left[
+Q_{30}\tau _{11}^{2}+3Q_{21}\tau _{11}\tau _{12}+Q_{03}\tau _{21}\tau _{22}%
+\right] ,  \label{eq23} \\
+\widehat{\beta }_{Lind} &=&\widetilde{\beta }+\frac{1}{2}\left[
+Q_{30}\tau _{11}\tau _{12}+Q_{21}(\tau _{11}\tau _{22}+2\tau
+_{12}^{2})+Q_{03}\tau _{22}^{2}\right] .
+\label{eq24}
+\end{eqnarray}%
+Notice that all approximate Bayes estimators are evaluated at $(\widetilde{%
+\alpha },\widetilde{\beta })$.
+
+
+\section*{"Resources}
+
+\begin{thebibliography}{99}
+\bibitem{knuth84} W. DZIUBDZIELA (Kielce) A. TOMICKA-STISZ (Cz¸estochowa) \emph{The TEXbook},APPLICATIONES MATHEMATICAE
+26,3 (1999), pp. 293–298
+Massachusetts, second edition, 1984,
+\end{thebibliography}
+
+\end{document}
